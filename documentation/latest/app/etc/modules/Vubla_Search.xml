@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <modules>
+        <Vubla_Search>
+            <active>True</active>
+            <codePool>community</codePool>
+            <depends>
+                <Mage_CatalogSearch />
+            </depends>
+        </Vubla_Search>
+    </modules>
+</config>

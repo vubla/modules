@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * Vubla
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the MageWorx EULA that is bundled with
+ * this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.mageworx.com/LICENSE-1.0.html
+ *
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@mageworx.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade the extension
+ * to newer versions in the future. If you wish to customize the extension
+ * for your needs please refer to http://www.mageworx.com/ for more information
+ * or send an email to sales@mageworx.com
+ *
+ * @category   Vubla
+ * @package    Vubla_Adminhtml
+ * @copyright  Copyright (c) 2011 MageWorx (http://www.mageworx.com/)
+ * @license    http://www.mageworx.com/LICENSE-1.0.html
+ */
+
+/**
+ * Vubla Adminhtml extension
+ *
+ * @category   Vubla
+ * @package    Vubla_Adminhtml
+ * @author     MageWorx Dev Team <dev@mageworx.com>
+ */
+-->
+<config>
+    <modules>
+        <Vubla_Adminhtml>
+            <version>1.2.0</version>
+        </Vubla_Adminhtml>
+    </modules>
+    <admin>
+        <routers>
+            <vubla>
+                <use>admin</use>
+                <args>
+                    <module>Vubla_Adminhtml</module>
+                    <frontName>vubla</frontName>
+                </args>
+            </vubla>
+        </routers>
+    </admin>
+    <adminhtml>
+        <menu>
+            <system>
+                <children>
+                    <vubla translate="title" module="vubla">
+                        <title>Get Support</title>
+                        <sort_order>11</sort_order>
+                        <action>adminhtml/system_config/edit/section/vubla</action>
+                    </vubla>
+                </children>
+            </system>
+        </menu>
+        <acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <vubla translate="title" module="vubla">
+                                            <title>Vubla &gt; Extensions &amp; Support</title>
+                                            <children>
+                                                <extensions translate="title">
+                                                    <title>Extensions Information</title>
+                                                    <sort_order>1</sort_order>
+                                                </extensions>
+                                                <support translate="title">
+                                                    <title>Get Support</title>
+                                                    <sort_order>2</sort_order>
+                                                </support>
+                                            </children>
+                                        </vubla>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        <translate>
+            <modules>
+                <Vubla_Adminhtml>
+                    <files>
+                        <default>Vubla_Adminhtml.csv</default>
+                    </files>
+                </Vubla_Adminhtml>
+            </modules>
+        </translate>
+    </adminhtml>
+    <global>
+        <blocks>
+            <vubla>
+                <class>Vubla_Adminhtml_Block</class>
+            </vubla>
+            <adminhtml>
+                <rewrite>
+                    <system_config_edit>Vubla_Adminhtml_Block_System_Config_Edit</system_config_edit>
+                </rewrite>
+            </adminhtml>
+        </blocks>
+        <models>
+            <vubla>
+                <class>Vubla_Adminhtml_Model</class>
+            </vubla>
+        </models>
+        <resources>
+            <vubla_setup>
+                <setup>
+                    <module>Vubla_Adminhtml</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </vubla_setup>
+            <vubla_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </vubla_write>
+            <vubla_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </vubla_read>
+        </resources>
+        <helpers>
+            <vubla>
+                <class>Vubla_Adminhtml_Helper</class>
+            </vubla>
+        </helpers>
+        <template>
+            <email>
+                <vubla_support_email_template>
+                    <label>Vubla Support</label>
+                    <file>vubla_support.html</file>
+                    <type>text</type>
+                </vubla_support_email_template>
+            </email>
+        </template>
+    </global>
+	
+    <default>
+        <vubla>
+            <support>
+                <email><![CDATA[c3VwcG9ydEBtYWdld29yeC5jb20=]]></email>
+                <name>Vubla Support</name>
+                <template>vubla_support_email_template</template>
+            </support>
+        </vubla>
+    </default>
+</config>

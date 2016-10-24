@@ -1,0 +1,1 @@
+Vubla_Search-<?php echo file_get_contents('/var/vubla/modules/magento/html/version.php'); ?>

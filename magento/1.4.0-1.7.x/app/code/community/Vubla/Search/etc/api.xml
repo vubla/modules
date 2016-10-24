@@ -1,0 +1,32 @@
+<config>
+    <api>
+        <resources>
+            <vubla_search translate="title" module="vubla">
+                <title>Vubla Search</title>
+                <acl>vubla_search</acl>
+                <model>Vubla_Search_Model_Api</model>
+                <methods>
+                    <fetch translate="title" module="vubla">
+                        <title>Retrive Log</title>
+                           <acl>vubla_search/fetch</acl>
+                    </fetch>
+                   
+                </methods>
+            
+            </vubla_search>
+        </resources>
+         <acl>
+            <resources>
+               <vubla_search translate="title" module="vubla">
+                   <title>Vubla Search</title>
+                   <fetch translate="title" module="vubla">
+                      <title>Retrieve Log</title>
+                   
+                   </fetch>
+
+               </vubla_search>
+            </resources>
+        </acl>
+    </api>
+   
+</config>
